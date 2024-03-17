@@ -100,8 +100,11 @@ footer p {
 }
 
 @media screen and (max-width: 994px) {
+
     .hamburger {
         display: block;
+        height: fit-content;
+        margin: 0;
     }
 
     
