@@ -40,7 +40,7 @@ header {
 .left {
     min-width: 200px; /* Set a minimum width for the aside tag */
     max-width: 300px; /* Set a maximum width for the aside tag */
-    background-color: #C2DCE7;
+    background-color: #f8f8f8;
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     text-align: left;
