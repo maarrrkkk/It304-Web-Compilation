@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Block & Inline Example</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        /* Styling for Block Elements */
+        .block-container {
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        p.block-paragraph {
+            margin-bottom: 10px;
+        }
+
+        /* Styling for Inline Elements */
+        .inline-container {
+            background-color: #e6f7ff;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+        }
+
+        span.inline-text {
+            font-weight: bold;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML Block & Inline Example</h1>
+
+    <!-- Block Elements Example -->
+    <div class="block-container">
+        <h2>Block Elements</h2>
+        <p class="block-paragraph">This is a block-level paragraph inside a div.</p>
+        <div>
+            <p class="block-paragraph">Nested block-level paragraph.</p>
+            <img src="Midnight.jpg" alt="Midnight Image" style="border-radius: 5px;">
+        </div>
+    </div>
+
+    <!-- Inline Elements Example -->
+    <div class="inline-container">
+        <h2>Inline Elements</h2>
+        <p>This is an <span class="inline-text">inline-span</span> inside a paragraph.</p>
+        <a href="https://www.example.com" target="_blank" class="inline-text">Block and Inline.com</a>
+        <span class="inline-text">This is another inline text.</span>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Table Example</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        caption {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        colgroup {
+            background-color: #e0e0e0;
+        }
+
+        col {
+            border-right: 2px solid #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML Table Example</h1>
+
+    <table>
+        <caption>Employee Information</caption>
+        <colgroup>
+            <col style="width: 10%;">
+            <col style="width: 30%;">
+            <col style="width: 30%;">
+            <col style="width: 30%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>Developer</td>
+                <td>$70,000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>Designer</td>
+                <td>$65,000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Bob Johnson</td>
+                <td>Manager</td>
+                <td>$80,000</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: center; background-color: #3498db; color: #fff;">Total Employees: 3</td>
+            </tr>
+            <tr>
+                <td rowspan="2">4</td>
+                <td colspan="2">Mark Anderson</td>
+                <td>$75,000</td>
+            </tr>
+            <tr>
+                <td>Lead Developer</td>
+                <td>$75,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Iframes Example</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        /* Styling for Iframes */
+        .iframe-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio (height/width * 100) */
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML Iframes Example</h1>
+
+    <!-- Responsive Iframe -->
+    <div class="iframe-container">
+        <iframe src="https://www.bing.com/ck/a?!&&p=3e65b23f0dea2b8fJmltdHM9MTcwOTQyNDAwMCZpZ3VpZD0zYzQ2OTNiMy03M2Y3LTY3YmQtMTE0My04Nzg0NzIzNzY2MjgmaW5zaWQ9NTIwMw&ptn=3&ver=2&hsh=3&fclid=3c4693b3-73f7-67bd-1143-878472376628&psq=wikipedia&u=a1aHR0cHM6Ly93d3cud2lraXBlZGlhLm9yZy8&ntb=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Iframe with Specific Size -->
+    <iframe width="400" height="300" src="https://www.bing.com/ck/a?!&&p=3e65b23f0dea2b8fJmltdHM9MTcwOTQyNDAwMCZpZ3VpZD0zYzQ2OTNiMy03M2Y3LTY3YmQtMTE0My04Nzg0NzIzNzY2MjgmaW5zaWQ9NTIwMw&ptn=3&ver=2&hsh=3&fclid=3c4693b3-73f7-67bd-1143-878472376628&psq=wikipedia&u=a1aHR0cHM6Ly93d3cud2lraXBlZGlhLm9yZy8&ntb=1" frameborder="0" allowfullscreen></iframe>
+
+    <p>This is an example of using HTML <code>&lt;iframe&gt;</code> elements with applied CSS. The first iframe is responsive, maintaining a 16:9 aspect ratio.</p>
+
+</body>
+</html>
