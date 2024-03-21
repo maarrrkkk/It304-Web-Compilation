@@ -179,8 +179,8 @@ header h3 {
   }
   
   .bn3:hover {
-    color: black;
-    background-color: rgb(255, 255, 255);
+    color: rgb(255, 252, 252);
+    background-color: rgb(0, 0, 0);
     border-radius: 5px;
   }
 
@@ -195,16 +195,17 @@ header h3 {
 }
 
 .additional-content a {
+    
     transition: all 0.2s;
-    padding: 3px;
+    padding: 5px;
     border-radius: 5px;
     display: block; /* Display links as block elements */
     margin-bottom: 1px; /* Add some spacing between links */
 }
 
 .additional-content a:hover {
-
-    background-color: white;
+    color: #ffff;
+    background-color: rgb(0, 0, 0);
     border-radius: 5px;
 }
 
