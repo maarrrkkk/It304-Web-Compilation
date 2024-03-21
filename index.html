@@ -20,26 +20,25 @@
             <ul class="topics">
                 <a class="bn3" href="#" onclick="toggleTopic('html')">HTML</a>
                   <div id="htmlTopic" class="additional-content">
-                      <h4><a href="#" onclick="loadContent('html-topic/topic1.html', 'TOPIC1')">Basic Structure & Elements</a></h4>                      
-                      <h4><a href="#" onclick="loadContent('html-topic/topic2.html','TOPIC2')">Attributes</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic3.html','TOPIC3')">Headings and Paragraphs</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic4.html','TOPIC4')">Styles</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic5.html','TOPIC5')">Formatting</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic6.html','TOPIC6')">Quotations and Comments</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic7.html','TOPIC7')">Colors</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic8.html','TOPIC8')">CSS</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic9.html','TOPIC9')">HTML Links</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic10.html','TOPIC10')">Images, Favicon and Page Title</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic11.html','TOPIC11')">Tables</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic12.html','TOPIC12')">Lists</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic13.html','TOPIC13')">Div, Classes and ID</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic14.html','TOPIC14')">Block & Inline</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic15.html','TOPIC15')">Iframes</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic16.html','TOPIC16')">HTML Layout</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic17.html','TOPIC17')">HTML Responsive</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic18.html','TOPIC18')">HTML Forms, Form Attributes and Form Elements</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic19.html','TOPIC19')">HTML Input Types, Input Attributes and Input Form Attributes</a></h4>
-                      <h4><a href="#" onclick="loadContent('html-topic/topic20.html','TOPIC20')">HTML APIs</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic1.html', 'TOPIC1', this)">Basic Structure & Elements</a></h4>                      
+                      <h4><a href="#" onclick="loadContent('html-topic/topic2.html','TOPIC2', this)">Attributes</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic3.html','TOPIC3', this) ">Headings and Paragraphs</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic4.html','TOPIC4', this) ">Styles</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic5.html','TOPIC5', this) ">Formatting</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic6.html','TOPIC6', this)">Quotations and Comments</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic7.html','TOPIC7', this)">CSS</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic9.html','TOPIC9', this)">HTML Links</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic10.html','TOPIC10', this)">Images, Favicon and Page Title</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic11.html','TOPIC11', this)">Tables</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic12.html','TOPIC12', this)">Lists</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic13.html','TOPIC13', this)">Div, Classes and ID</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic14.html','TOPIC14', this)">Block & Inline</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic15.html','TOPIC15', this)">Iframes</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic16.html','TOPIC16', this)">HTML Layout</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic17.html','TOPIC17', this)">HTML Responsive</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic18.html','TOPIC18', this)">HTML Forms, Form Attributes and Form Elements</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic19.html','TOPIC19', this)">HTML Input Types, Input Attributes and Input Form Attributes</a></h4>
+                      <h4><a href="#" onclick="loadContent('html-topic/topic20.html','TOPIC20', this)">HTML APIs</a></h4>
                       <p></p>
                   </div>
                </ul>
@@ -74,7 +73,7 @@
             asideElement.classList.toggle('show');
         }
 
-        function loadContent(url, iframeName) {
+        function loadContent(url, iframeName, clickedLink) {
             var iframe = document.querySelector('iframe[name="mainIframe"]');
             if (!url) {
                 url = 'what-is-html.html'; // Default URL
@@ -98,8 +97,18 @@
                     }
                 `;
                 iframeDoc.head.appendChild(style);
+
+                // Remove active class from all links
+                document.querySelectorAll('.additional-content a').forEach(function(link) {
+                    link.classList.remove('active');
+                });
+
+                // Add active class to the clicked link
+                clickedLink.classList.add('active');
             };
         }
+
+
 
         window.onload = function() {
             loadContent(); // Load default content on page load

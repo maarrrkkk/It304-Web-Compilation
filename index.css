@@ -188,9 +188,7 @@ header h3 {
 
 
 .additional-content {
-
     display: none;
-
     text-align: left; /* Align text to the left */
 }
 
@@ -208,6 +206,13 @@ header h3 {
     background-color: rgb(0, 0, 0);
     border-radius: 5px;
 }
+
+.additional-content a.active {
+    color: white;
+    background-color: black;
+}
+
+
 
 /*                  End of Additional Content                      */
 
@@ -227,4 +232,4 @@ iframe {
     to {
       opacity: 1;
     }
-  }
+}
