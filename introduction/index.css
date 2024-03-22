@@ -1,0 +1,279 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Heebo&display=swap');
+
+
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: black;
+
+    /*This code bellow makes the footer stick to the bottom of the page*/
+    display: flex; 
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /*This wiil make the footer to the bottom of tha page*/
+}
+
+h1 {
+
+    font-size: 50px;
+}
+
+header {
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+
+nav ul {
+    text-align: center; /* Center the text within the <ul> horizontally */
+    list-style-type: none;
+    padding: 0;
+    padding-top: 1cm;
+    display: flex;
+    flex-direction: row; /* Display the list items horizontally by default */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+}
+
+nav li {
+    flex: 1; /* Distribute available space evenly among list items */
+    padding: 10px;
+    margin: 10px;
+}
+
+a {
+    color: maroon;
+}
+
+nav a {
+
+    text-decoration: none;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/*
+
+nav a:hover {
+    background-color: #333;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow behind the background 
+}
+nav a:hover {
+    background-color: #333;
+    color: white;
+}
+*/
+
+@media (max-width: 640px) {
+    /* Apply these styles when the screen width is 768px or less */
+    nav ul {
+        align-items: center;
+        flex-direction: column; /* Stack list items vertically on smaller screens */
+        
+    }
+    nav li {
+        flex: none; /* Reset flex property to default for vertical stacking */
+        padding: 10px;
+        margin: 10px;
+    }
+
+}
+
+
+
+
+/*a[title="Connect with me on Spotify"]:hover {
+    background-image: url('Spotify_logo_without_text.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+a[title="Connect with me on Instagram"]:hover {
+    background-image: url('instagram_png_logo.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+*/
+
+.description-container p {
+
+    font-family: 'Bebas Neue', sans-serif;  
+    font-family: 'Heebo', sans-serif;
+    padding: 20px;
+    text-align: justify;
+}
+
+.container-box {
+
+    padding: 10px;
+    text-align: center;
+}
+
+
+.photo-cards {
+    display: flex; /* Display the photo cards horizontally */
+    gap: 20px;     /* Add some spacing between the photo cards */
+}
+
+.photo-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+    flex: 1; /* Distribute available space evenly among photo cards */
+}
+
+.avatar-flex-container {
+    text-align: center;
+}
+
+.avatar-flex-container img {
+    width: 100%; /* Set the image width to 100% of the container */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 150px; /* Set a maximum width for the image if needed */
+    max-height: 150px; /* Set a maximum height for the image if needed */
+    border-radius: 50%; /* Make the image round for avatars */
+}
+
+
+
+.avatar-flex-container h3 {
+
+    font-size: 30px;
+}
+.photo-info {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+#photo-card {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #666;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/*CSS BUTTON*/
+
+.bn5 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 5px;
+}
+
+.bn5:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowingbn5 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowingbn5 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.bn5:active {
+  color: #000;
+}
+
+.bn5:active:after {
+  background: transparent;
+}
+
+.bn5:hover:before {
+  opacity: 1;
+}
+
+.bn5:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #191919;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/*star rating*/
+
+.star-rating {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .star {
+    color: #ccc;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .star.active {
+    color: #ffcc00; /* Color for active/filled stars */
+  }

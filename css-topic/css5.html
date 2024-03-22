@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Icons, Links, Lists, and Tables</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>The Beauty</h1>
+    </header>
+    <style>
+        /* Resetting Default Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-attachment: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav :hover {
+    color: #ccc;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+.product-list {
+    list-style-type: none;
+}
+
+.product-list li {
+    display: inline-block;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.product-list img {
+    width: 150px;
+    height: auto;
+}
+
+
+.contact-table {
+    width: 100%;
+}
+
+.contact-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.contact-table i {
+    margin-right: 10px;
+    color: #007bff;
+}
+
+    </style>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Featured Products</h2>
+            <ul class="product-list">
+                <li>
+                    <img src="product1.jpg" alt="Product 1">
+                    <h3>Product 1</h3>
+                    <p>$19.99</p>
+                </li>
+                <li>
+                    <img src="product2.jpg" alt="Product 2">
+                    <h3>Product 2</h3>
+                    <p>$24.99</p>
+                </li>
+                <li>
+                    <img src="product3.jpg" alt="Product 3">
+                    <h3>Product 3</h3>
+                    <p>$29.99</p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Contact Information</h2>
+            <table class="contact-table">
+                <tr>
+                    <td><i class="fas fa-map-marker-alt"></i></td>
+                    <td>Maharlika Highway, Brgy. San Policarpo Calbayog City</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-phone"></i></td>
+                    <td>+639752965646</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-envelope"></i></td>
+                    <td>jamilaaguilar2@gmail.com</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

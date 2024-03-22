@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Component Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Resetting Default Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* Card Component Styles */
+.card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 50px;
+}
+
+.card-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.card-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.card-button:hover {
+    background-color: #0056b3;
+    outline: none;
+}
+
+</style>
+<body>
+    <div class="card">
+        <img src="example.jpg" alt="Example Image" class="card-image">
+        <div class="card-content">
+            <h2 class="card-title">Product Name</h2>
+            <p class="card-text">Discover our latest collection of products crafted with care and attention to detail.</p>
+            <button class="card-button">View Collection</button>
+        </div>
+    </div>
+</body>
+</html>
+
