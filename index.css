@@ -46,7 +46,6 @@ header {
     text-align: left;
     padding: 0.5em 0 0em 0.5em;
     flex: 1.6 1 100px;
-    
 }
 main {
 
@@ -157,7 +156,6 @@ header h3 {
     font-family: "Manrope", sans-serif;
 }
 .topics {
-
     margin: 0%;
     padding: 0% ;
 
@@ -193,7 +191,6 @@ header h3 {
 }
 
 .additional-content a {
-    
     transition: all 0.2s;
     padding: 5px;
     border-radius: 5px;
