@@ -1,18 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Manrope:wght@600&display=swap');
-
 * {
     font-family: sans-serif;
     margin: 5px;
     box-sizing: border-box;
+   
 }
-
 a {
     font-size: medium;
     font-weight: 100;
     text-decoration: none;
     color: black;
 }
-
 body {
     background-color: #FBF6F6;
     text-align: center;
@@ -23,14 +21,17 @@ body {
     flex-direction: column;
     min-height: 100vh;
     animation: fadeIn 0.5s ease;
+    margin: 0;
 }
-
 header {
     align-items: center;
     padding: 0em 0 0em 0;
     display: flex;
     justify-content: space-between;
     z-index: 1;
+}
+ul .topics {
+    display: block;
 }
 .main {
     display: flex;
@@ -48,32 +49,31 @@ header {
     flex: 1.6 1 100px;
 }
 main {
-
     flex: 5 5 100px;
 }
 footer {
     font-size: 15px;
-    padding: 1em 0 0em 0;
-    margin-top: auto;
+    height: 10px;
+    display: flex;
+    justify-content: center; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
    
 }
 footer p {
     margin: 0;
+    padding: 0;
 }
-
 #wrap {
     width: 100%;
     height: 100%;
     margin: 0px 0px 0px 0px;
     overflow: hidden;
 }
-
 #scaled-frame {
     max-width: 100%;
     height: 100%;
     border: 0px;
 }
-
 #scaled-frame {
     zoom: 0.75;
     -moz-transform: scale(1);
@@ -83,13 +83,11 @@ footer p {
     -webkit-transform: scale(1);
     -webkit-transform-origin: 0 0;
 }
-
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     #scaled-frame {
         zoom: 1;
     }
 }
-
 .hamburger {
     display: none; /* Hide the hamburger icon by default */
     left: 10px; /* Adjust the left position as needed */
@@ -97,17 +95,13 @@ footer p {
     cursor: pointer;
     z-index: 2; /* Ensure it's above other elements */
 }
-
 @media screen and (max-width: 994px) {
-
     .hamburger {
         display: block;
         height: fit-content;
         margin: 0;
     }
-
     
-
     .left {
         position: absolute;
         left: 0;
@@ -119,7 +113,6 @@ footer p {
         transform: translateX(-100%);
         z-index: 1; /* Ensure the sidebar is above the main content */
     }
-
     .left.show {
         transform: translateX(0);
     }
@@ -128,28 +121,18 @@ footer p {
         margin: 0;
     }
 }
-
-
-
 /*-------------------------------------------------rest of the content----------------------------------------*/
-
-
 .avatar-container,
 .logo-container {
     flex: 1;
     display: flex;
     justify-content: center;
 }
-
-
-
 header img {
     height: 60px;
     margin-right: 10px;
     border-radius: 50px;
 }
-
-
 header h3 {
     text-align: left;
     flex: 1;
@@ -160,13 +143,11 @@ header h3 {
 .topics {
     margin: 0%;
     padding: 0% ;
-
 }
-
 .bn3 {
-    display: inline-block;
-    padding: 0.5em 1em;
-    margin: 0 0em 0.1em 0;
+    display: block;
+    padding: 0.5em 0.5em;
+    margin: 0 0em 0.0em 0;
     box-sizing: border-box;
     text-decoration: none;
     font-family: "Roboto", sans-serif;
@@ -175,18 +156,14 @@ header h3 {
     text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
     text-align: left;
     transition: all 0.2s;
-    border-radius: 5px;
-  }
-  
-  .bn3:hover {
+    border-radius: 30px 0px 0px 30px;
+}
+.bn3:hover {
     color: rgb(255, 252, 252);
     background-color: rgb(0, 0, 0);
-    border-radius: 5px;
-  }
-
-/*                  This is Additional Content                      */
-
-
+    border-radius: 30 0px 0px 30px;
+}
+/*------------------------This is Additional Content------------------------*/
 .additional-content {
     display: none;
     text-align: left; /* Align text to the left */
@@ -194,27 +171,26 @@ header h3 {
 
 .additional-content a {
     transition: all 0.2s;
+
     padding: 5px;
     border-radius: 5px;
     display: block; /* Display links as block elements */
     margin-bottom: 1px; /* Add some spacing between links */
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
 }
 
 .additional-content a:hover {
     color: #ffff;
     background-color: rgb(0, 0, 0);
     border-radius: 5px;
+    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
 }
 
 .additional-content a.active {
     color: white;
     background-color: black;
 }
-
-
-
 /*                  End of Additional Content                      */
-
 iframe {
     border: none; /* Remove border */
     width: 100%; /* Full width */
@@ -226,7 +202,6 @@ iframe {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 @keyframes fadeIn {
     from {
       opacity: 0;

@@ -41,10 +41,24 @@
                       <h4><a href="#" onclick="loadContent('html-topic/topic20.html','TOPIC20', this)">HTML APIs</a></h4>
                       <p></p>
                   </div>
+                  <a class="bn3" href="#" onclick="toggleTopic('css')">CSS</a>
+                    <div id="cssTopic" class="additional-content">
+                        <h4><a href="#" onclick="loadContent('css-topic/css1.html', 'TOPIC1', this)">Basic Structure & Elements</a></h4>  
+                        
+                        
+
+                        <!-- input your css content here!-->
+
+
+                        
+                        <p></p>
+                    </div>
                </ul>
         </aside>
-        <main id="mainContent">
-            
+        <main>
+            <div id="wrap">
+                <iframe id="scaled-frame" src="" name="mainIframe" frameborder="0"></iframe>
+            </div>
         </main>
     </div>
     <footer>
@@ -56,37 +70,70 @@
     <!-------------------------------------------script code-------------------------------------------->
     
     <script>
-        function loadContent(url, clickedLink) {
+        function toggleTopic(topic) {
+            var topicElement = document.getElementById(topic + 'Topic');
+            if (topicElement.style.display === 'block') {
+                topicElement.style.display = 'none'; // Hide the topic
+                loadContent('what-is-html.html', 'WHAT IS HTML?'); // Load what is html back into iframe
+            } else {
+                topicElement.style.display = 'block'; // Show the topic
+            }
+        }
+
+        function toggleAside() {
+            var asideElement = document.querySelector('aside');
+            asideElement.classList.toggle('show');
+        }
+
+        function loadContent(url, iframeName, clickedLink) {
+            var iframe = document.querySelector('iframe[name="mainIframe"]');
             if (!url) {
                 url = 'what-is-html.html'; // Default URL
             }
-            $.get(url, function(data) {
-                $('#mainContent').html(data);
-                // Add active class to the clicked link
-                $('.additional-content a').removeClass('active');
-                $(clickedLink).addClass('active');
-            });
-            // Remove active class from all links
-            document.querySelectorAll('.additional-content a').forEach(function(link) {
+            iframe.src = url;
+            iframe.onload = function() {
+                var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                var style = iframeDoc.createElement('style');
+                style.textContent = `
+                    @keyframes fadeIn {
+                        from {
+                            opacity: 0;
+                        }
+                        to {
+                            opacity: 1;
+                        }
+                    }
+
+                    body {
+                        animation: fadeIn 1s ease;
+                    }
+                `;
+                iframeDoc.head.appendChild(style);
+
+                // Remove active class from all links
+                document.querySelectorAll('.additional-content a').forEach(function(link) {
                     link.classList.remove('active');
                 });
 
                 // Add active class to the clicked link
                 clickedLink.classList.add('active');
+            };
         }
-    
-        $(document).ready(function() {
-            loadContent('what-is-html.html', $('a[href="#"]')); // Load default content on page load
-        });
-    
-        function toggleTopic(topic) {
-            var topicElement = $('#' + topic + 'Topic');
-            topicElement.toggle(); // Show/hide the topic
-            loadContent('what-is-html.html', $('a[href="#"]')); // Load default content
+
+
+
+        window.onload = function() {
+            loadContent(); // Load default content on page load
+        };
+
+
+        function resizeIframe(iframe) {
+            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
         }
-    
+
         function toggleAside() {
-            $('aside').toggleClass('show');
+          var asideElement = document.querySelector('aside');
+          asideElement.classList.toggle('show');
         }
     </script>
 </body>
