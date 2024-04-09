@@ -189,6 +189,7 @@ header h3 {
 .additional-content a.active {
     color: white;
     background-color: black;
+    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
 }
 /*                  End of Additional Content                      */
 iframe {
