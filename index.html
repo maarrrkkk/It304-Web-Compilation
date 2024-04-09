@@ -55,10 +55,8 @@
                     </div>
                </ul>
         </aside>
-        <main>
-            <div id="wrap">
-                <iframe id="scaled-frame" src="" name="mainIframe" frameborder="0"></iframe>
-            </div>
+        <main id="mainContent">
+            
         </main>
     </div>
     <footer>
@@ -69,72 +67,41 @@
 
     <!-------------------------------------------script code-------------------------------------------->
     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        function toggleTopic(topic) {
-            var topicElement = document.getElementById(topic + 'Topic');
-            if (topicElement.style.display === 'block') {
-                topicElement.style.display = 'none'; // Hide the topic
-                loadContent('what-is-html.html', 'WHAT IS HTML?'); // Load what is html back into iframe
-            } else {
-                topicElement.style.display = 'block'; // Show the topic
-            }
-        }
-
-        function toggleAside() {
-            var asideElement = document.querySelector('aside');
-            asideElement.classList.toggle('show');
-        }
-
-        function loadContent(url, iframeName, clickedLink) {
-            var iframe = document.querySelector('iframe[name="mainIframe"]');
+        function loadContent(url, clickedLink) {
             if (!url) {
                 url = 'what-is-html.html'; // Default URL
             }
-            iframe.src = url;
-            iframe.onload = function() {
-                var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                var style = iframeDoc.createElement('style');
-                style.textContent = `
-                    @keyframes fadeIn {
-                        from {
-                            opacity: 0;
-                        }
-                        to {
-                            opacity: 1;
-                        }
-                    }
-
-                    body {
-                        animation: fadeIn 1s ease;
-                    }
-                `;
-                iframeDoc.head.appendChild(style);
-
-                // Remove active class from all links
-                document.querySelectorAll('.additional-content a').forEach(function(link) {
+            $.get(url, function(data) {
+                $('#mainContent').html(data);
+                // Add active class to the clicked link
+                $('.additional-content a').removeClass('active');
+                $(clickedLink).addClass('active');
+            });
+            // Remove active class from all links
+            document.querySelectorAll('.additional-content a').forEach(function(link) {
                     link.classList.remove('active');
                 });
 
                 // Add active class to the clicked link
                 clickedLink.classList.add('active');
-            };
         }
-
-
-
-        window.onload = function() {
-            loadContent(); // Load default content on page load
-        };
-
-
-        function resizeIframe(iframe) {
-            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    
+        $(document).ready(function() {
+            loadContent('what-is-html.html', $('a[href="#"]')); // Load default content on page load
+        });
+    
+        function toggleTopic(topic) {
+            var topicElement = $('#' + topic + 'Topic');
+            topicElement.toggle(); // Show/hide the topic
+            loadContent('what-is-html.html', $('a[href="#"]')); // Load default content
         }
-
+    
         function toggleAside() {
-          var asideElement = document.querySelector('aside');
-          asideElement.classList.toggle('show');
+            $('aside').toggleClass('show');
         }
     </script>
+    
 </body>
 </html>
