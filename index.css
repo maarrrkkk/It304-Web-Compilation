@@ -193,19 +193,17 @@ header h3 {
 }
 
 .additional-content a {
-    
+    transition: all 0.2s;
     padding: 5px;
     border-radius: 5px;
     display: block; /* Display links as block elements */
     margin-bottom: 1px; /* Add some spacing between links */
-    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
 }
 
 .additional-content a:hover {
     color: #ffff;
     background-color: rgb(0, 0, 0);
     border-radius: 5px;
-    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
 }
 
 .additional-content a.active {
