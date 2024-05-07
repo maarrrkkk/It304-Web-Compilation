@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Comments Colors and Background</title>
+    <style>
+
+        * {
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+        }
+        /* Comments */
+        /* &lt;!-- This is a comment in CSS. Comments are ignored by browsers and can be used to add notes or explanations in your code. --&gt; */
+        
+        /* Colors */
+        body {
+
+            color: #333; /* Hexadecimal color code for a dark gray */
+        }
+
+        h1 {
+            color: rgb(255, 0, 0); /* RGB color value for red */
+        }
+
+        p {
+            color: hsl(0, 0%, 0%); /* HSL color value for green */
+        }
+
+        .code-container {
+
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        /* Backgrounds */
+        body {
+            background-color: #f0f0f0; /* Hexadecimal color code for a light gray */
+        }
+
+        .container {
+            background-color: rgba(128, 128, 255, 0.3); /* RGBA color value for a semi-transparent blue */
+            padding: 20px;
+        }
+
+        .backgroundstyle {
+
+            color: #ffffff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Comments Colors and Background</h1>
+    <section>
+        <div class="container">
+            <p>CSS, or Cascading Style Sheets, is a style sheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML, etc.). It controls the layout, colors, fonts, and other visual aspects of a web page, allowing developers to separate content from presentation and create consistent designs across multiple pages or sites.</p>
+
+            <p>CSS works by targeting HTML elements and applying styles to them. Selectors are used to target specific elements, and properties are used to define the style of those elements. For example, you can use CSS to change the color and size of text, set background colors or images, create layout structures, and add animations or transitions.</p>
+        </div>
+        <br>
+        <h2>CSS Comments</h2>
+        <p class="code-container"><i>/* This is a comment displayed on the webpage. */</i></p>
+
+        <h1 class="backgroundstyle">This is the background color</h1>
+    </section>
+    
+</body>
+</html>

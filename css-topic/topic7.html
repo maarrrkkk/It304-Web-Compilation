@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Combinators, Pseudo-classes, Pseudo-elements, and Opacity</title>
+    <style>
+        /* Descendant combinator */
+        div p {
+            color: blue;
+        }
+
+        /* Child combinator */
+        div > p {
+            font-weight: bold;
+        }
+
+        /* Adjacent sibling combinator */
+        h2 + p {
+            font-style: italic;
+        }
+
+        /* General sibling combinator */
+        h2 ~ p {
+            text-decoration: underline;
+        }
+
+        /* Pseudo-classes */
+        a:link {
+            color: blue;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        /* Pseudo-element */
+        p::first-line {
+            font-weight: bold;
+        }
+
+        /* Opacity */
+        .opaque {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Combinators, Pseudo-classes, Pseudo-elements, and Opacity</h1>
+    <section>
+        <div>
+            <p>This is a paragraph inside a div.</p>
+        </div>
+    </section>
+    <section>
+        <div>
+            <p>This is a paragraph inside a div using the child combinator.</p>
+        </div>
+    </section>
+    <section>
+        <h2>Heading 2</h2>
+        <p>This is a paragraph that follows a heading using the adjacent sibling combinator.</p>
+    </section>
+    <section>
+        <h2>Heading 2</h2>
+        <p>This is a paragraph that follows a heading using the general sibling combinator.</p>
+        <p>This is another paragraph that follows the same heading.</p>
+    </section>
+    <section>
+        <h2>Links</h2>
+        <p><a href="#">Link 1</a></p>
+        <p><a href="#">Link 2</a></p>
+    </section>
+    <section>
+        <h2>Pseudo-element</h2>
+        <p>This is the first line of a paragraph using the ::first-line pseudo-element.</p>
+    </section>
+    <section>
+        <h2>Opacity</h2>
+        <div class="opaque">
+            This text has reduced opacity.
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to CSS</title>
+    <style>
+        * {
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+          }
+        .code-container {
+
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        /* Selectors Section */
+        #selectors-p {
+            color: red;
+            font-weight: bold;
+        }
+
+        #selectors-ul > li {
+
+            font-style: italic;
+        }
+
+        #selectors-input[type="text"] {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        #selectors-a {
+            margin-left: 20px;
+            text-decoration: none;
+    
+        }
+
+        #selectors-a:hover {
+            margin-left: 20px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Introduction to CSS</h1>
+    <section>
+        <div>
+            <p>CSS, or Cascading Style Sheets, is a style sheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML, etc.). It controls the layout, colors, fonts, and other visual aspects of a web page, allowing developers to separate content from presentation and create consistent designs across multiple pages or sites.</p>
+
+            <p>CSS works by targeting HTML elements and applying styles to them. Selectors are used to target specific elements, and properties are used to define the style of those elements. For example, you can use CSS to change the color and size of text, set background colors or images, create layout structures, and add animations or transitions.</p>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h4>There are three main ways to include CSS in a web page</h4>
+        </div>
+        <h4><ol><li>Inline Styles: You can apply styles directly to HTML elements using the style attribute. For example:</li></ol></h4>
+        <div class="code-container">
+            <p> &lt;p&gt; style="color: blue; font-size: 16px;">This is a paragraph with inline styles.&lt;/p&gt;
+        </p>
+        </div>
+
+        <h4><ol><li>Internal Styles: You can include CSS within the &lt;style&gt; element in the &lt;head&gt; section of an HTML document. This method is useful for applying styles to a single page. For example:</li></ol></h4>
+        <div class="code-container">
+            <p> 
+                &lt;head&gt;
+                    &lt;style&gt;
+                        p {
+                            color: blue;
+                            font-size: 16px;
+                        }
+                    &lt;/style&gt;
+                &lt;/head&gt;
+            </p>
+        </div>
+
+        <h4><ol><li>External Styles: You can create a separate CSS file and link it to your HTML document using the &lt;link&gt; element. This method is ideal for applying styles across multiple pages. For example:</li></ol></h4>
+        <div class="code-container">
+            <p> 
+                &lt;head&gt;
+                    &lt;link rel="stylesheet" type="text/css" href="styles.css"&gt;
+                &lt;/head&gt;
+            </p>
+        </div>
+        
+    </section>
+    <br>
+
+    <section>
+        <h1>Selectors</h1>
+        <div>
+            <p id="selectors-p">This is an example of CSS Selectors.</p>
+            <ul id="selectors-ul">
+                <li>List item 1</li>
+                <li>List item 2</li>
+                <li>List item 3</li>
+            </ul>
+            <input id="selectors-input" type="text" placeholder="Enter your text">
+            <a id="selectors-a" href="#">Hover over me</a>
+        </div>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display, Max-Width, Position, and Z-index</title>
+    <style>
+        * {
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+        }
+        /* Display */
+        .flex-container {
+            display: flex;
+        }
+
+        /* Max-Width */
+        .max-width-container {
+            max-width: 800px;
+            margin: 0 auto; /* Center the container */
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        /* Position and Z-index */
+        .absolute-container {
+            position: relative;
+        }
+
+        .absolute-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 200px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            z-index: 1;
+        }
+
+        .relative-box {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Display, Max-Width, Position, and Z-index</h1>
+    <section>
+        <h2>Display: Flex</h2>
+        <div class="flex-container">
+            <div style="background-color: #f2f2f2; padding: 10px;">Flex Item 1</div>
+            <div style="background-color: #ccc; padding: 10px;">Flex Item 2</div>
+            <div style="background-color: #f2f2f2; padding: 10px;">Flex Item 3</div>
+        </div>
+    </section>
+    <section>
+        <h2>Max-Width</h2>
+        <div class="max-width-container">
+            This container has a maximum width of 800px.
+        </div>
+    </section>
+    <section>
+        <h2>Position and Z-index</h2>
+        <div class="absolute-container">
+            <div class="absolute-box">Position: Absolute<br>Z-index: 1</div>
+            <div class="relative-box">Position: Relative<br>Z-index: 2</div>
+        </div>
+    </section>
+</body>
+</html>
