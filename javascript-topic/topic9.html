@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body class="content">
+    <div class="content-data">
+        <div class="card-title">
+            <h1>JavaScript Objects</h1>
+        </div>
+
+        <div>
+            <h3>JS Objects</h3>
+            <p>
+
+
+                In JavaScript, functions are first-class objects, which means they can be treated like any other object.
+                This characteristic allows for powerful programming techniques and patterns. Let's discuss and explain
+                some important aspects of function objects:
+            </p>
+
+            <ol>
+                <li>
+                    <strong>Creation and Declaration</strong>
+                    <ul>
+                        <li>
+                            Functions can be created in several ways, including function declarations, function
+                            expressions, and arrow functions.
+                        </li>
+                        <li>
+                            Once created, a function becomes an object and can be assigned to variables, passed as
+                            arguments to other functions, returned from functions, and stored in data structures like
+                            arrays and objects.
+                        </li>
+
+                    </ul>
+                </li>
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+// Function declaration
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+// Function expression
+var add = function(a, b) {
+    return a + b;
+};
+
+// Arrow function
+var subtract = (a, b) => a - b;
+
+               
+                    </pre>
+                </div>
+
+                <li>
+                    <strong>Function Properties</strong>
+                    <ul>
+                        <li>Like any object, functions can have properties. They can be added, modified, or deleted
+                            dynamically.</li>
+
+                    </ul>
+                </li>
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+// Adding a property to a function object
+greet.language = "English";
+console.log(greet.language); // Output: English
+
+                    </pre>
+                </div>
+
+                <li>
+                    <strong>Function Methods</strong>
+                    <ul>
+                        <li>Functions in JavaScript are objects of the built-in Function constructor, which provides
+                            methods for working with functions.</li>
+                        <li>For example, the apply() and call() methods allow you to call a function with a specified
+                            this value and arguments.</li>
+                    </ul>
+                </li>
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+function introduce() {
+    console.log("My name is " + this.name + ".");
+}
+
+var person = {
+    name: "Alice"
+};
+
+introduce.call(person); // Output: My name is Alice.
+
+         
+                    </pre>
+                </div>
+
+                <li>
+                    <strong>Higher-Order Functions</strong>
+                    <ul>
+                        <li>
+                            Functions that can accept other functions as arguments or return functions are known as
+                            higher-order functions.
+                        </li>
+                        <li>This enables powerful functional programming paradigms, such as map, filter, reduce, and
+                            more.</li>
+                    </ul>
+                </li>
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+function map(arr, fn) {
+    var result = [];
+    for (var i = 0; i < arr.length; i++) {
+        result.push(fn(arr[i]));
+    }
+    return result;
+}
+
+var numbers = [1, 2, 3, 4, 5];
+var doubled = map(numbers, function(num) {
+    return num * 2;
+});
+console.log(doubled); // Output: [2, 4, 6, 8, 10]
+    
+                    </pre>
+                </div>
+
+                <li>
+                    <strong>Closures</strong>
+                    <ul>
+                        <li>Functions in JavaScript have access to the variables defined in their outer scope, even
+                            after the outer function has finished executing. This is known as a closure.</li>
+                        <li>Closures are a powerful feature that allows for maintaining state and creating private
+                            variables.</li>
+                    </ul>
+                </li>
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+function createCounter() {
+    var count = 0;
+    return function() {
+        return ++count;
+    };
+}
+
+var counter = createCounter();
+console.log(counter()); // Output: 1
+console.log(counter()); // Output: 2
+
+   
+                    </pre>
+                </div>
+
+
+
+            </ol>
+
+            <p>
+                Understanding functions as objects in JavaScript opens up a wide range of possibilities for creating
+                flexible, reusable, and expressive code. By leveraging their properties, methods, and capabilities,
+                developers can employ advanced programming techniques and patterns to build robust and scalable
+                applications.
+            </p>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+</body>
+
+</html>

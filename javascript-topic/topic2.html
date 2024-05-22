@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
+</head>
+
+<body class="content">
+    <div class="content-data">
+        <div class="card-title">
+            <h1>JavaScript Where to</h1>
+        </div>
+
+        <div>
+            <h3>The &lt;script&gt; tag</h3>
+            <p>
+                The
+                &lt;script&gt; tag instructs the web browser to interpret a script embedded within the HTML or link to
+                an external script file.These scripts are most commonly written in JavaScript, the ubiquitous
+                programming language for web development.
+            </p>
+            <h3>How it Works</h3>
+            <p>The &lt;script&gt; tag can be used in two ways:</p>
+            <ol>
+                <li><strong>Inline Scripting</strong>: Here,the script code is directly written within the opening and
+                    closing &lt;script&gt; tags. This is useful for short scripts or for including code within a
+                    specific HTML element.
+                </li>
+                <li>
+                    <strong>External Scripting</strong>: n this approach, the &lt;script&gt; tag references an external
+                    JavaScript file using the src attribute. This is generally preferred for larger scripts or for
+                    organizing your code better.
+                </li>
+
+            </ol>
+
+            <h4>Example Code:</h4>
+
+
+            <div class="pre-container">
+                <h3>Inline Script (Alert Message):</h3>
+                <pre>
+&lt;button onclick=&lt;script&gt;alert('Hello World!')&lt;/script&gt;">Click Me&lt;/button&gt;
+&lt;script&gt;
+function alertMessage() {
+  alert('Hello World!')
+}
+&lt;/script&gt;
+
+                    </pre>
+
+            </div>
+            <h3>Output:</h3>
+            <div class="ex-pcontainer">
+
+                <button onclick="alert('Hello World!')" style="height: 50px; width: 100px;">Click Me</button>
+                <script>
+                    function alertMessage() {
+                        alert('Hello World!')
+                    }
+                </script>
+            </div>
+
+            <h4>Another Example Code:</h4>
+
+            <div class="pre-container">
+                <h3>External Script (Changing Text Color):</h3>
+
+                <pre>
+&lt;h1 id="heading"&gt;Welcome!&lt;/h1&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+
+(external script js)
+
+document.getElementById("heading").style.color = "blue";
+                    </pre>
+
+            </div>
+            <h3>Output:</h3>
+            <div class="ex-pcontainer">
+
+                <h1 id="heading">Welcome!</h1>
+                <script src="../script.js"></script>
+
+
+            </div>
+            <p>
+                These are just basic examples. With JavaScript and the &lt;script&gt; tag, the possibilities for
+                creating dynamic and interactive web experiences are vast!
+            </p>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

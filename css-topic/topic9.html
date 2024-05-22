@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Image Sprites, Forms, and Counters</title>
+    <style>
+        /* Image Sprites */
+        .sprite {
+            width: 50px;
+            height: 50px;
+            background-image: url('fbsprite.png');
+        }
+
+        .icon1 {
+            background-position: 0 0;
+        }
+
+        .icon2 {
+            background-position: -50px 0;
+        }
+
+        .icon3 {
+            background-position: -100px 0;
+        }
+
+        /* Forms */
+        form {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Counters */
+        .counter {
+            counter-reset: section;
+        }
+
+        .counter h2:before {
+            counter-increment: section;
+            content: "Section " counter(section) ": ";
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Image Sprites, Forms, and Counters</h1>
+    <section>
+        <h2>Image Sprites</h2>
+        <div class="sprite icon1"></div>
+        <div class="sprite icon2"></div>
+        <div class="sprite icon3"></div>
+    </section>
+    <section>
+        <h2>Forms</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+    <section class="counter">
+        <h2>Counters</h2>
+        <h3>Section 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h3>Section 2</h3>
+        <p>Nulla facilisi. Duis at velit maximus, venenatis magna eu, auctor metus.</p>
+        <h3>Section 3</h3>
+        <p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque.</p>
+    </section>
+</body>
+</html>

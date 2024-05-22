@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Example with Bootstrap 4</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #content {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body class="bg-transparent">
+    <div class="container">
+        <h1>jQuery Example with Bootstrap 4</h1>
+
+        <div id="buttons" class="mt-5">
+            <button id="fadeButton" class="btn btn-primary">Fade In/Out</button>
+            <button id="htmlGetButton" class="btn btn-primary">Get HTML</button>
+            <button id="htmlSetButton" class="btn btn-primary">Set HTML</button>
+            <button id="loadButton" class="btn btn-primary">Load Content</button>
+            <button id="getButton" class="btn btn-primary">Get Data</button>
+            <button id="postButton" class="btn btn-primary">Post Data</button>
+        </div>
+
+        <div id="content" class="mt-4 border p-3"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Fade In/Out effect
+            $("#fadeButton").click(function() {
+                $("#content").fadeToggle("slow");
+            });
+
+            // HTML (GET) - Fetch content from another page
+            $("#htmlGetButton").click(function() {
+                $("#content").load("external.html");
+            });
+
+            // HTML (SET) - Set content
+            $("#htmlSetButton").click(function() {
+                $("#content").html("<h2>New Content</h2><p>This is new content set using jQuery.</p>");
+            });
+
+            // AJAX Intro - Load data from server (simulated)
+            $("#loadButton").click(function() {
+                $("#content").text("Loading data...");
+                setTimeout(function() {
+                    $("#content").text("Loaded data: Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+                }, 1000); // Simulating AJAX delay with setTimeout
+            });
+
+            // Get/Post - Get data from server (simulated)
+            $("#getButton").click(function() {
+                $("#content").text("Fetching data...");
+                setTimeout(function() {
+                    $("#content").text("Fetched data: Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+                }, 1000); // Simulating AJAX delay with setTimeout
+            });
+
+            $("#postButton").click(function() {
+                $("#content").text("Posting data...");
+                setTimeout(function() {
+                    $("#content").text("Posted data: Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+                }, 1000); // Simulating AJAX delay with setTimeout
+            });
+        });
+    </script>
+</body>
+</html>

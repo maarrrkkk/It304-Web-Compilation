@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body class="content">
+    <div class="content-data">
+        <div class="card-title">
+            <h1>JavaScript Functions</h1>
+        </div>
+
+        <div>
+            <h3>JS Functions</h3>
+            <p>
+                JavaScript functions are blocks of code that perform a specific task or calculate a value. They are
+                fundamental building blocks of JavaScript programming, allowing for code reuse, abstraction, and
+                organization. Here's a discussion along with examples:
+            </p>
+
+            <ol>
+                <li>
+                    <strong>Function Declaration</strong>:Syntax: function functionName(parameters) { // code block }
+                </li>
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+// Function to add two numbers
+function add(a, b) {
+    return a + b;
+}                 
+                    </pre>
+                </div>
+
+                <li>
+                    <strong>Function Expression </strong>: Syntax: var functionName = function(parameters) { // code
+                    block }
+                </li>
+
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+// Function expression to subtract two numbers
+var subtract = function(a, b) {
+    return a - b;
+};
+                    </pre>
+                </div>
+
+                <li>
+                    <strong>Arrow Functions (ES6+)</strong>:Syntax: var functionName = (parameters) => { // code block }
+                </li>
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+// Arrow function to multiply two numbers
+var multiply = (a, b) => {
+    return a * b;
+};
+               
+                    </pre>
+                </div>
+
+                <li>
+                    <strong>Immediately Invoked Function Expression (IIFE) </strong>: Syntax: (function() { // code
+                    block })();
+                </li>
+
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+// IIFE to display a message
+(function() {
+    var message = "Hello, World!";
+    console.log(message);
+})();
+
+                    </pre>
+                </div>
+
+                <li>
+                    <strong>Function Parameters and Arguments</strong>: Parameters are placeholders in a function
+                    definition and Arguments are the values passed to the function when it's called.
+                </li>
+
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+// Function to calculate the area of a rectangle
+function calculateArea(length, width) {
+    return length * width;
+}
+// Calling the function with arguments
+var area = calculateArea(5, 3); // length = 5, width = 3
+
+
+                    </pre>
+                </div>
+
+                <li>
+                    <strong>Return Statement </strong>: Functions can return values using the return statement.
+                </li>
+
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+// Function to check if a number is even
+function isEven(number) {
+    return number % 2 === 0;
+}
+
+
+                    </pre>
+                </div>
+
+                <li>
+                    <strong>Scope</strong>: Functions have their own scope, meaning variables declared inside a function
+                    are only accessible within that function (unless using closures).
+
+                    <h4>Example Code:</h4>
+                    <div class="pre-container">
+                        <pre>
+// Global variable
+var globalVar = "I'm global";
+
+// Function with local variable
+function localFunction() {
+    var localVar = "I'm local";
+    console.log(globalVar); // Accessible
+}
+
+console.log(globalVar); // Accessible
+console.log(localVar); // Throws an error
+
+
+
+                    </pre>
+                    </div>
+            </ol>
+
+            <p>
+                Functions are essential for modularizing code, improving code organization, and promoting reusability.
+                They encapsulate logic, making it easier to understand and maintain codebases, and are a fundamental
+                concept in JavaScript programming.
+            </p>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body class="content">
+    <div class="content-data">
+        <div class="card-title">
+            <h1>JavaScript Events</h1>
+        </div>
+
+        <div>
+            <h3>JS Events</h3>
+            <p>
+
+
+                JavaScript events are actions or occurrences that happen in the browser, typically as a result of user
+                interactions or system triggers. These events enable developers to create interactive and dynamic web
+                applications. Here's a discussion along with some examples of JavaScript events:
+            </p>
+
+            <ol>
+                <li>
+                    <strong>Event Handling</strong>
+                    <ul>
+                        <li>
+                            Event handling involves defining code (event handlers) that should execute in response to
+                            specific events.
+                        </li>
+                        <li>
+                            In JavaScript, event handlers are functions that are invoked when an event occurs.
+                        </li>
+
+                    </ul>
+                </li>
+                <h3> Types of Events </h3>
+
+                <li>
+                    <strong>Mouse Events:</strong>
+                    <ul>
+                        <li>These events are triggered by mouse interactions such as clicks, hover, mouse movement, etc.
+                        </li>
+
+                    </ul>
+                </li>
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+document.getElementById("myButton").addEventListener("click", function() {
+    console.log("Button clicked!");
+});
+
+
+
+                       
+                    </pre>
+                </div>
+                <h4>Output</h4>
+
+                <div class="ex-pcontainer">
+                    <button id="myButton" style="height: 50px; width: 100px; ">Click me</button>
+
+                    <script>
+                        document.getElementById("myButton").addEventListener("click", function () {
+                            console.log("Button clicked!");
+                        });
+                    </script>
+
+
+
+                </div>
+
+
+                <li>
+                    <strong>Keyboard Events</strong>
+
+                    <ul>
+                        <li>These events are triggered by keyboard interactions such as key presses and releases.</li>
+
+                    </ul>
+                </li>
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+document.addEventListener("keydown", function(event) {
+    console.log("Key pressed: " + event.key);
+});
+ 
+                    </pre>
+                </div>
+
+                <h4>Output:</h4>
+                <div class="ex-pcontainer">
+
+                    <h3>Press any key: </h3>
+
+                    <script>
+                        document.addEventListener("keydown", function (event) {
+                            console.log("Key pressed: " + event.key);
+                        });
+                    </script>
+
+                    
+                </div>
+                <div class="pre-container">
+                    <pre>
+(you will see the result by inspect element and go to console)
+                    </pre>
+                </div>
+
+                <li>
+                    <strong>Form Events</strong>
+                    <ul>
+                        <li>
+                            These events are triggered by interactions with HTML form elements such as submitting a
+                            form, changing input values, etc.
+                        </li>
+
+                    </ul>
+                </li>
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    console.log("Form submitted!");
+});
+
+    
+                    </pre>
+                </div>
+
+                <h4>Output:</h4>
+                <div class="ex-pcontainer">
+
+                    <form id="myForm">
+                        <input type="text" name="username" placeholder="Username">
+                        <button type="submit">Submit</button>
+                    </form>
+
+                    <script>
+                        document.getElementById("myForm").addEventListener("submit", function (event) {
+                            event.preventDefault(); // Prevent form submission
+                            console.log("Form submitted!");
+                        });
+                    </script>
+
+                    
+                </div>
+                <div class="pre-container">
+                    <pre>
+(you will see the result by inspect element and go to console)
+                    </pre>
+                </div>
+
+                <li>
+                    <strong>Document and Window Events</strong>
+                    <ul>
+                        <li>These events are triggered by changes in the document or window state, such as loading,
+                            resizing, scrolling, etc.</li>
+
+                    </ul>
+                </li>
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+window.addEventListener("load", function() {
+    console.log("Page loaded!");
+});
+   
+                    </pre>
+                </div>
+                <h4>Output:</h4>
+                <div class="ex-pcontainer">
+
+
+                    <h2>Scroll down:</h2>
+
+                    <script>
+                        window.addEventListener("load", function () {
+                            console.log("Page loaded!");
+                        });
+                    </script>
+
+                    
+                </div>
+                <div class="pre-container">
+                    <pre>
+(you will see the result by inspect element and go to console)
+                    </pre>
+                </div>
+
+                <strong>Event Registration</strong>
+                <ul>
+                    <li>
+                        Event handlers can be registered to HTML elements using event attributes (onclick, onmouseover,
+                        etc.) or by using the addEventListener() method.
+                    </li>
+                    <li>
+                        Using addEventListener() allows for attaching multiple event handlers to the same event on an
+                        element and provides more flexibility.
+                    </li>
+
+                </ul>
+
+                <strong>Event Object</strong>
+                <ul>
+                    <li>
+                        When an event occurs, the browser creates an event object that contains information about the
+                        event (e.g., the type of event, target element, mouse coordinates, etc.).
+                    </li>
+                    <li>
+                        Event objects are passed as arguments to event handler functions, allowing developers to access
+                        event-related data.
+                    </li>
+
+                </ul>
+
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+document.getElementById("myElement").addEventListener("click", function(event) {
+    console.log("Clicked on element: " + event.target.id);
+});
+
+
+
+                </pre>
+                </div>
+
+                <h4>Output:</h4>
+                <div class="ex-pcontainer">
+
+
+                    <h2 id="myElement" style=" background-color: lightblue; cursor: pointer; ">
+                        Click Me
+                    </h2>
+
+                    <script>
+                        document.getElementById("myElement").addEventListener("click", function (event) {
+                            console.log("Clicked on element: " + event.target.id);
+                        });
+                    </script>
+
+                </div>
+                <div class="pre-container">
+                    <pre>
+(you will see the result by inspect element and go to console)
+                    </pre>
+                </div>
+
+
+                <strong>Event Propagation</strong>
+                <ul>
+                    <li>
+                        JavaScript events follow a bubbling or capturing propagation model, where an event triggered on
+                        a specific element can also affect its parent and ancestor elements (bubbling) or its child and
+                        descendant elements (capturing).
+                    </li>
+                    <li>
+                        Developers can control event propagation using methods like stopPropagation() and
+                        preventDefault().
+                    </li>
+
+                </ul>
+
+                <h4>Example Code:</h4>
+                <div class="pre-container">
+                    <pre>
+document.getElementById("myButton").addEventListener("click", function(event) {
+    event.stopPropagation(); // Stop event from bubbling up
+    console.log("Button clicked!");
+});
+
+
+
+                </pre>
+                </div>
+
+                <h4>Output:</h4>
+                <div class="ex-pcontainer">
+
+
+                    <button id="myButton" style="height: 50px; width: 100px;">Click Me</button>
+
+                    <script>
+                        document.getElementById("myButton").addEventListener("click", function (event) {
+                            console.log("Button clicked!");
+                        });
+                    </script>
+
+
+                </div>
+                
+                <div class="pre-container">
+                    <pre>
+(you will see the result by inspect element and go to console)
+                    </pre>
+                </div>
+
+                
+            </ol>
+
+            <p>
+                JavaScript events is crucial for creating interactive and responsive web applications. By leveraging
+                events, developers can build engaging user experiences and enhance the interactivity of their web
+                applications.
+            </p>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+</body>
+
+</html>

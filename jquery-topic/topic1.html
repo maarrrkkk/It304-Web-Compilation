@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Example with Bootstrap 4</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #message {
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-transparent">
+    <div class="container">
+        <h1>jQuery Example with Bootstrap 4</h1>
+
+        <div id="message" class="mt-5">
+            <p>Click the button to change the text color!</p>
+            <button id="changeColorButton" class="btn btn-primary">Change Color</button>
+        </div>
+    </div>
+
+    <script>
+        // jQuery syntax: $(selector).action()
+        
+        // jQuery document ready function to ensure DOM is fully loaded
+        $(document).ready(function() {
+            // Event handler for button click event
+            $("#changeColorButton").click(function() {
+                // Selecting element by ID and changing its CSS color property
+                $("#message p").css("color", "blue");
+            });
+        });
+    </script>
+</body>
+</html>
