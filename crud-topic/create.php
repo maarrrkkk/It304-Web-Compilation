@@ -11,9 +11,12 @@ $name = "";
 $email = "";
 $phone = "";
 $address = "";
+$weight = "";
+$height = "";
+$facebook_link = "";
+$gmail = "";
 
-
-$errorMessage ="";
+$errorMessage = "";
 $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -21,17 +24,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST["email"];
     $phone = $_POST["phone"];
     $address = $_POST["address"];
-
+    $weight = $_POST["weight"];
+    $height = $_POST["height"];
+    $facebook_link = $_POST["facebook_link"];
+    $gmail = $_POST["gmail"];
 
     do {
-        
-        if ( empty($name) || empty($email) || empty($phone) || empty($address) ) {
-            $errorMessage = "All the field are required";
+        if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($weight) || empty($height) || empty($gmail)) {
+            $errorMessage = "All fields except Facebook link are required";
             break;
         }
 
-        $sql = "INSERT INTO clients (name, email, phone, address) " .
-                "VALUES ('$name', '$email', '$phone', '$address')";
+        $sql = "INSERT INTO staff (name, email, phone, address, weight, height, facebook_link, gmail) " .
+               "VALUES ('$name', '$email', '$phone', '$address', '$weight', '$height', '$facebook_link', '$gmail')";
         $result = $connection->query($sql);
 
         if (!$result) {
@@ -43,8 +48,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $email = "";
         $phone = "";
         $address = "";
+        $weight = "";
+        $height = "";
+        $facebook_link = "";
+        $gmail = "";
 
-        $successMessage = "Client added correctly";
+        $successMessage = "Staff added correctly";
 
         header("location: index.php");
         exit;
@@ -65,10 +74,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body class="bg-transparent">
     <div class="container my-5">
-        <h2>New Client</h2>
+        <h2>New Staff</h2>
 
         <?php
-        if ( !empty($errorMessage) ) {
+        if (!empty($errorMessage)) {
             echo "
             <div class='alert alert-warning alert-dismissible fade show' role='alert'>
                 <strong>$errorMessage</strong>
@@ -81,57 +90,77 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <form method="post">
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Name</label>
-                <div class="col-sm 6">
-                    <input type="text" class="form-control" name="name" value="<?php echo $name; ?>">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control <?php echo (!empty($nameError) ? 'is-invalid' : ''); ?>" name="name" value="<?php echo $name; ?>">
+                    <div class="invalid-feedback"><?php echo $nameError; ?></div>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Email</label>
-                <div class="col-sm 6">
-                    <input type="text" class="form-control" name="email" value="<?php echo $email; ?>">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control <?php echo (!empty($emailError) ? 'is-invalid' : ''); ?>" name="email" value="<?php echo $email; ?>">
+                    <div class="invalid-feedback"><?php echo $emailError; ?></div>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Phone</label>
-                <div class="col-sm 6">
+                <div class="col-sm-6">
                     <input type="text" class="form-control" name="phone" value="<?php echo $phone; ?>">
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Address</label>
-                <div class="col-sm 6">
+                <div class="col-sm-6">
                     <input type="text" class="form-control" name="address" value="<?php echo $address; ?>">
                 </div>
             </div>
-
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Weight</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="weight" value="<?php echo $weight; ?>">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Height</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="height" value="<?php echo $height; ?>">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Facebook Link</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="facebook_link" value="<?php echo $facebook_link; ?>">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Gmail</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="gmail" value="<?php echo $gmail; ?>">
+                </div>
+            </div>
 
             <?php
-                if ( !empty($successMessage) ) {
-                    echo "
-                    <div class='row mb-3'>
-                        <div class='offset-sm-3 col-sm-6'>
-                            <div class='alert alert-success alert-dismissible fade show' role='alert'>
-                                <strong>$successMessage</strong>
-                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                            </div>
+            if (!empty($successMessage)) {
+                echo "
+                <div class='row mb-3'>
+                    <div class='offset-sm-3 col-sm-6'>
+                        <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                            <strong>$successMessage</strong>
+                            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                         </div>
                     </div>
-                    ";
-                }
+                </div>
+                ";
+            }
             ?>
            
             <div class="row mb-3">
-                <div class="offset-sm-3 col-sm-3 d-grid">
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                <div class="offset-sm-3 col-sm-6">
+                    <button class="btn btn-success" type="submit">Submit</button>
+                    <a href="index.php" class="btn btn-outline-danger ms-2" role="button">Cancel</a>
                 </div>
-                <div class="col-sm-3 d-grid">
-                    <a href="/myshop/index.php" class="btn btn-outline-primary" role="button">Cancel</a>
-
-                </div>
-
             </div>
         </form>
     </div>
-    
 </body>
 </html>
